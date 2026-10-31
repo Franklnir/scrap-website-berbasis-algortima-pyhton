@@ -1,0 +1,12 @@
+# Versi langsung yang dipakai dalam pengujian Linux, bukan lock seluruh dependency tree.
+requests==2.34.2
+beautifulsoup4==4.15.0
+httpx==0.28.1
+mcp==1.30.0
+websockets==15.0.1
+pypdf==6.10.0
+youtube-transcript-api==1.2.4
+reportlab==4.4.9
+filelock==3.32.7
+pytest==9.2.0
+build==1.6.1

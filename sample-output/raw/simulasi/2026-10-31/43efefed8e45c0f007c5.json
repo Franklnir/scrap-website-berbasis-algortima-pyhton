@@ -1,0 +1,35 @@
+{
+  "title": "Otomatisasi Perpustakaan Digital",
+  "description": "Dataset simulasi untuk demonstrasi tugas Python.",
+  "keywords": "",
+  "content": "# Otomatisasi Perpustakaan Digital\n\n> 📚 **Tipe Konten**: Artikel Web\n> 👤 **Penulis / Kontributor**: Tim ScrapMCP\n> 🌐 **Sumber URL**: https://example.org/simulasi/materi\n\n---\n\n### 📖 Isi Dokumen / Artikel\n\nPerpustakaan digital mengelola koleksi buku dan materi pembelajaran secara terstruktur.\nPython membantu petugas mengambil informasi publik, membersihkan teks, menyimpan data, dan membuat laporan harian secara otomatis.\n\n### Tahapan pengolahan data\n\n1. Mengambil halaman website.\n2. Membersihkan spasi dan informasi tidak relevan.\n3. Menyimpan metadata dan isi artikel.\n4. Mengelompokkan file serta membuat backup.\n\n### Dataset simulasi buku\n\n| Judul | Kategori | Jumlah |\n| --- | --- | --- |\n| Dasar Python | Informatika | 12 |\n| Jaringan Komputer | Informatika | 8 |\n\nRegular expressions membantu validasi DOI dan ekstraksi alamat email seperti pustaka@example.org.\nCadangan ZIP menyatukan seluruh dokumen sehingga mudah dipindahkan. Sistem ini dijalankan melalui terminal tanpa database eksternal.\n\n---\n\n### 🧠 Kuis Pemahaman & Flashcards\n\n1. ❓ **Pertanyaan**: Apa konsep atau fungsi utama yang dibahas mengenai Otomatisasi Perpustakaan Digital?\n   - 💡 **Kunci Jawaban**: Perpustakaan digital mengelola koleksi buku dan materi pembelajaran secara terstruktur.\n\n2. ❓ **Pertanyaan**: Bagaimana prinsip kerja, metode, atau karakteristik penting terkait Dataset simulasi buku?\n   - 💡 **Kunci Jawaban**: Regular expressions membantu validasi DOI dan ekstraksi alamat email seperti pustaka@example.org.\n\n3. ❓ **Pertanyaan**: Apa temuan penting, hasil pengujian, atau keunggulan dari pembahasan Otomatisasi Perpustakaan Digital?\n   - 💡 **Kunci Jawaban**: Cadangan ZIP menyatukan seluruh dokumen sehingga mudah dipindahkan.",
+  "word_count": 114,
+  "is_truncated": false,
+  "source_type": "offline_fixture",
+  "content_type": "Artikel Web",
+  "authors": [
+    "Tim ScrapMCP"
+  ],
+  "journal": "",
+  "pub_date": "",
+  "doi": "",
+  "abstract": "",
+  "collected_links": [],
+  "quiz": [
+    {
+      "question": "Apa konsep atau fungsi utama yang dibahas mengenai Otomatisasi Perpustakaan Digital?",
+      "answer": "Perpustakaan digital mengelola koleksi buku dan materi pembelajaran secara terstruktur."
+    },
+    {
+      "question": "Bagaimana prinsip kerja, metode, atau karakteristik penting terkait Dataset simulasi buku?",
+      "answer": "Regular expressions membantu validasi DOI dan ekstraksi alamat email seperti pustaka@example.org."
+    },
+    {
+      "question": "Apa temuan penting, hasil pengujian, atau keunggulan dari pembahasan Otomatisasi Perpustakaan Digital?",
+      "answer": "Cadangan ZIP menyatukan seluruh dokumen sehingga mudah dipindahkan."
+    }
+  ],
+  "success": true,
+  "url": "https://example.org/simulasi/materi",
+  "dataset_kind": "simulation"
+}

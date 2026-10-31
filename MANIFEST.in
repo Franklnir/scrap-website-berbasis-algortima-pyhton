@@ -1,0 +1,5 @@
+include README.md SOURCE_ATTRIBUTION.md requirements-tested.txt urls.txt
+include install-linux.sh install-windows.bat
+recursive-include src/scrapmcp/fixtures *.html
+recursive-include tests *.py
+recursive-include docs *.md *.py

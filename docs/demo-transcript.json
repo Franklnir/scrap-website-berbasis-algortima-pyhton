@@ -1,0 +1,38 @@
+[
+  {
+    "command": "scrapmcp ",
+    "data_dir": "./demo-data",
+    "exit_code": 0,
+    "output": "\nSCRAPMCP | Scraping & Arsip Materi\n1. Scrap manual (URL HTML/PDF/YouTube)\n2. Hubungkan MCP Xiaozhi\n3. Riset topik / jurnal\n4. Daftar & baca materi\n5. Ekspor JSON / CSV\n6. Buat laporan PDF\n7. Backup ZIP\n8. Demo offline lengkap\n9. Lihat folder data\n0. Keluar\nPilih [0-9]: "
+  },
+  {
+    "command": "scrapmcp --help",
+    "data_dir": "./demo-data",
+    "exit_code": 0,
+    "output": "usage: scrapmcp [-h] [--version] [--data-dir DATA_DIR] [--allow-jina]\n                {scrape,batch,research,academic,list,export,report,backup,demo,doctor,read,mcp}\n                ...\n\nScraping manual dan MCP Xiaozhi. Tanpa subperintah: menu interaktif.\n\npositional arguments:\n  {scrape,batch,research,academic,list,export,report,backup,demo,doctor,read,mcp}\n    scrape              Ambil URL dan simpan hasil\n    batch               Ambil URL dari file teks, satu URL per baris\n    research            Riset topik; default pratinjau\n    academic            Cari jurnal\n    mcp                 Hubungkan endpoint Xiaozhi (prompt/env), atau MCP\n                        stdio\n\noptions:\n  -h, --help            show this help message and exit\n  --version             show program's version number and exit\n  --data-dir DATA_DIR   Folder data (default: ~/scrapmcp-data); letakkan\n                        sebelum subperintah.\n  --allow-jina          Aktifkan fallback Jina Reader; URL sumber akan dikirim\n                        ke r.jina.ai.\n"
+  },
+  {
+    "command": "scrapmcp demo",
+    "data_dir": "./demo-data",
+    "exit_code": 0,
+    "output": "{\n  \"id\": \"43efefed8e45c0f007c5\",\n  \"title\": \"Otomatisasi Perpustakaan Digital\",\n  \"url\": \"https://example.org/simulasi/materi\",\n  \"category\": \"simulasi\",\n  \"word_count\": 234,\n  \"duplicate\": false\n}\n{\n  \"report\": {\n    \"generated_at\": \"2026-10-31T03:58:33.067402+00:00\",\n    \"records\": 1,\n    \"words\": 234,\n    \"categories\": {\n      \"simulasi\": 1\n    },\n    \"simulated_records\": 1,\n    \"failed_events\": 0,\n    \"pdf\": \"./demo-data/reports/summary.pdf\",\n    \"markdown\": \"./demo-data/reports/summary.md\"\n  },\n  \"backup\": {\n    \"path\": \"./demo-data/backups/scrapmcp_20261031_035833_074237.zip\",\n    \"files\": 9\n  }\n}\n"
+  },
+  {
+    "command": "scrapmcp list",
+    "data_dir": "./demo-data",
+    "exit_code": 0,
+    "output": "[\n  {\n    \"id\": \"43efefed8e45c0f007c5\",\n    \"title\": \"Otomatisasi Perpustakaan Digital\",\n    \"category\": \"simulasi\",\n    \"url\": \"https://example.org/simulasi/materi\"\n  }\n]\n"
+  },
+  {
+    "command": "scrapmcp export",
+    "data_dir": "./demo-data",
+    "exit_code": 0,
+    "output": "{\n  \"records\": 1,\n  \"json\": \"./demo-data/exports/dataset.json\",\n  \"csv\": \"./demo-data/exports/dataset.csv\"\n}\n"
+  },
+  {
+    "command": "scrapmcp backup",
+    "data_dir": "./demo-data",
+    "exit_code": 0,
+    "output": "{\n  \"path\": \"./demo-data/backups/scrapmcp_20261031_035834_533885.zip\",\n  \"files\": 9\n}\n"
+  }
+]

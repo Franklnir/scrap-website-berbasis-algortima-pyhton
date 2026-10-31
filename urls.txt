@@ -1,0 +1,2 @@
+# Satu URL publik per baris. Ketersediaan sumber dapat berubah.
+https://docs.python.org/3/tutorial/

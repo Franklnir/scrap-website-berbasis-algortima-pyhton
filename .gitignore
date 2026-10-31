@@ -1,0 +1,33 @@
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+
+# Security & Secrets (NEVER COMMIT TO GITHUB)
+.env
+.env.*
+.mcp_endpoint
+.mcp_endpoint*
+*.token
+*.key
+*.pem
+*.secret
+
+# User Data directories (All scraped and local test data)
+scrapmcp-data/
+data-kelompok/
+data/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
