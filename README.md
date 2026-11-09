@@ -12,9 +12,11 @@ Proyek Tugas Besar Pemrograman Python Otomatisasi berbasis terminal (CLI) dengan
 
 ---
 
-## 📑 Berkas Laporan & Presentasi
+## 📑 Berkas Laporan, Presentasi & Spreadsheet
 * 📊 **Slide Presentasi (8 Slide Ringkas & Padat):** [`docs/PRESENTASI_8_SLIDE.pptx`](docs/PRESENTASI_8_SLIDE.pptx)
 * 📄 **Laporan Dokumentasi Visual (Tangkapan Layar Sistem):** [`docs/DOKUMENTASI_TANGKAPAN_LAYAR.pdf`](docs/DOKUMENTASI_TANGKAPAN_LAYAR.pdf)
+* 📈 **Dataset Excel Terformat (.xlsx):** [`sample-output/exports/dataset.xlsx`](sample-output/exports/dataset.xlsx)
+* 📋 **Dataset CSV Konsolidasi:** [`sample-output/exports/dataset.csv`](sample-output/exports/dataset.csv)
 * 📸 **Koleksi Tangkapan Layar:** [`docs/screenshots/`](docs/screenshots/)
 
 ---
@@ -26,57 +28,94 @@ Proyek Tugas Besar Pemrograman Python Otomatisasi berbasis terminal (CLI) dengan
 
 ---
 
-## 🚀 Panduan Instalasi Cepat
+## 🚀 Panduan Instalasi (Windows & Linux)
 
-### Prasyarat
-* Python **3.10** atau lebih baru
-* Git & koneksi internet (hanya saat mengunduh dependensi)
+### Prasyarat Sistem
+* Python **3.10** atau lebih baru terpasang di sistem ([Unduh Python](https://www.python.org/downloads/))
+* Git untuk mengunduh kode program
 
-### 1. Clone Repositori
+### Langkah 1: Clone Repositori
+Buka Terminal (Linux) atau PowerShell / Git Bash (Windows):
 ```bash
 git clone https://github.com/Franklnir/scrap-website-berbasis-algortima-pyhton.git
 cd scrap-website-berbasis-algortima-pyhton
 ```
 
-### 2. Instalasi Dependensi (Linux / macOS)
+---
+
+### Langkah 2A: Instalasi di Sistem Operasi LINUX
+
+#### Opsi 1 — Otomatis (1 Perintah):
 ```bash
-# Buat virtual environment
+bash install-linux.sh
+```
+
+#### Opsi 2 — Manual via Terminal:
+```bash
+# 1. Buat virtual environment
 python3 -m venv .venv
+
+# 2. Aktifkan virtual environment
 source .venv/bin/activate
 
-# Install paket lokal
+# 3. Pasang dependensi dan paket lokal
 pip install -e .
 ```
-*(Atau jalankan skrip otomatis: `bash install-linux.sh`)*
-
-### 2. Alternatif Instalasi (Windows)
-```powershell
-# Buat virtual environment
-py -m venv .venv
-.\.venv\Scripts\activate
-
-# Install paket lokal
-pip install -e .
-```
-*(Atau jalankan skrip otomatis: `install-windows.bat`)*
 
 ---
 
-## 💻 Panduan Penggunaan Aplikasi
+### Langkah 2B: Instalasi di Sistem Operasi WINDOWS
 
-### 1. Mode Menu Interaktif Terminal (CLI REPL)
-Jalankan aplikasi ke dalam menu interaktif angka `[0–9]`:
-```bash
-scrapmcp
-# atau
-python -m scrapmcp.cli --interactive
+#### Opsi 1 — Otomatis (Satu Klik):
+Cukup **klik ganda (double-click)** pada berkas:
+👉 `install-windows.bat`  
+Skrip batch akan secara otomatis membuat virtual environment dan memasang semua dependensi.
+
+#### Opsi 2 — Manual via PowerShell:
+```powershell
+# 1. Buat virtual environment
+py -m venv .venv
+
+# 2. Aktifkan virtual environment
+.\.venv\Scripts\Activate.ps1
+
+# 3. Pasang dependensi dan paket lokal
+pip install -e .
 ```
 
-Tampilan menu utama:
+#### Opsi 3 — Manual via Command Prompt (CMD):
+```cmd
+py -m venv .venv
+.\.venv\Scripts\activate.bat
+pip install -e .
+```
+
+---
+
+## 💻 Panduan Cara Pakai Aplikasi (Windows & Linux)
+
+### 1. Menjalankan Menu Interaktif Terminal (CLI REPL)
+Mode ini sangat direkomendasikan saat sesi demonstrasi di hadapan dosen/penguji.
+
+* **Di Linux:**
+  ```bash
+  source .venv/bin/activate
+  scrapmcp
+  # atau: python -m scrapmcp.cli --interactive
+  ```
+
+* **Di Windows (PowerShell/CMD):**
+  ```powershell
+  .\.venv\Scripts\activate
+  scrapmcp
+  # atau: python -m scrapmcp.cli --interactive
+  ```
+
+Tampilan menu interaktif angka `[0–9]`:
 ```text
 =======================================================================
    SCRAPMCP - AUTOMATED WEB SCRAPER & RESEARCH ASSISTANT (v1.0.0)      
-   Tugas Besar Otomatisasi Python (Integrasi Chapter 9 s/d 13)          
+   Tugas Besar Otomatisasi Python (Kelompok 3: Irsyad, Sena, Dhean)    
 =======================================================================
 [*] System Environment Check (Doctor):
     - Storage Base    : ~/scrapmcp-data/ [OK]
@@ -95,31 +134,56 @@ MENU UTAMA:
   [9] Diagnostic System / Doctor Check
   [0] Keluar
 ```
+*Cukup ketik angka menu (misal: `1` untuk scraping atau `9` untuk diagnosa), lalu tekan Enter.*
+
+---
 
 ### 2. Mode Perintah Cepat (One-Shot CLI)
-Eksekusi langsung melalui flag perintah:
+Bisa langsung dijalankan dari terminal/PowerShell tanpa masuk ke menu:
 
-* **Scraping URL Spesifik & Simpan:**
+* **Scraping URL Tertentu & Simpan:**
   ```bash
   scrapmcp scrape "https://produk.irsyadlabs.id/" --category teknologi
   ```
-* **Riset Otomatis Berdasarkan Topik (Bing & Wikipedia):**
+* **Riset Otomatis Berdasarkan Topik (Multi-Source Search):**
   ```bash
   scrapmcp research "kecerdasan buatan" --mode web --save
   ```
-* **Scraping Banyak URL Sekaligus (Batch):**
+* **Scraping Banyak URL Sekaligus (Batch URL):**
   ```bash
   scrapmcp batch urls.txt --category referensi
   ```
-* **Daftar & Baca Rekaman yang Telah Diambil:**
+* **Melihat Daftar Materi yang Pernah Diambil:**
   ```bash
   scrapmcp list
-  scrapmcp read <ID_DARI_LIST>
   ```
-* **Pemeriksaan Kesehatan Sistem:**
+* **Membaca Detail Materi Tertentu Berdasarkan ID:**
+  ```bash
+  scrapmcp read <ID_DOKUMEN>
+  ```
+* **Membuat Backup ZIP Mandiri:**
+  ```bash
+  scrapmcp backup
+  ```
+* **Diagnostik Kesehatan Sistem:**
   ```bash
   scrapmcp doctor
   ```
+
+---
+
+### 3. Cara Membuka Hasil Dataset (Excel & CSV)
+Semua rekaman hasil scraping tersimpan secara terorganisir di folder `~/scrapmcp-data/exports/` (atau folder `sample-output/exports/`):
+
+* **Di Windows:**
+  * Buka File Explorer, masuk ke folder `exports/`.
+  * Klik ganda berkas **`dataset.xlsx`** atau **`dataset.csv`** untuk langsung membukanya di Microsoft Excel.
+* **Di Linux:**
+  * Buka lewat LibreOffice Calc dengan perintah terminal:
+    ```bash
+    localc ~/scrapmcp-data/exports/dataset.xlsx &
+    ```
+  * Atau gunakan shortcut desktop **Microsoft Excel (Calc)** yang telah disediakan.
 
 ---
 
@@ -131,7 +195,7 @@ Semua hasil pemrosesan tersimpan rapi secara terstruktur di `~/scrapmcp-data/`:
 | `raw/<kategori>/<tanggal>/` | Berkas mentah asli unduhan web (`raw.html`) untuk audit data |
 | `processed/<kategori>/<tanggal>/` | Teks bersih hasil ekstraksi BeautifulSoup & file metadata JSON |
 | `backups/` | Arsip kompresi mandiri per riset (`riset_{slug}_{hash}.zip`) ber-`MANIFEST.json` SHA-256 |
-| `exports/` | Dataset tabular konsolidasi global: `dataset.csv` (RFC 4180) & `dataset.json` |
+| `exports/` | Dataset tabular konsolidasi: `dataset.xlsx` (Excel), `dataset.csv` & `dataset.json` |
 | `reports/` | Laporan audit berkas dan ringkasan eksekutif |
 | `logs/` | Jejak audit eksekusi CLI (`scraping.log`) |
 
